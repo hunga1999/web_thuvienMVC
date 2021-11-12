@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<title>Nhập ID</title>
+<style>
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	font-family: time new roman;
+	font-size: 20px;
+}
+
+#menu {
+	width: 560px;
+	height: 40px;
+	background: #337ab7;
+	margin: 30px auto;
+}
+
+ul.item li {
+	list-style: none;
+	float: left;
+}
+
+ul.item li a {
+	text-decoration: none;
+	color: #fff;
+	padding: 0px 15px 0px 15px;
+	line-height: 40px;
+	display: block;
+}
+
+ul.item li a:hover {
+	background: #aaa;
+}
+
+#text {
+	margin: 30px auto;
+	width: 600px;
+	height: 40px;
+}
+</style>
+</head>
+<body>
+	<div id="menu">
+		<ul class="item">
+			<li><a href="/home">Trang chủ</a></li>
+			<li><a href="/docgia">Mượn sách</a></li>
+			<li><a href="">Trả sách</a></li>
+			<li><a href="">Thêm sách</a></li>
+			<li><a href="/logout">Đăng xuất</a></li>
+
+		</ul>
+
+	</div>
+	<div class="container" style="margin-top: 50px;">
+		<div class="row"
+			style="border: 1px darkgrey solid; border-radius: 10px; width: 50%; margin: 0 auto; padding: 20px;">
+			<div class="col-sm-12">
+				<h1>Hệ thống quản lý thư viện</h1>
+				<h3>Mã độc giả</h3>
+				<form action="/docgia" method="post">
+					<div class="form-group">
+						<label>ID Độc giả</label> <input input type="munber"
+							class="form-control" name="idDG" placeholder="">
+						<p style="color: red" th:text="${ERRO1}"></p>
+					</div>
+			</div>
+			<button type="submit" class="btn btn-primary">Xác nhận</button>
+			</form>
+			<form form acti​on="/add-docgia" method="get">
+				<a>‍‍‍‎​&nbsp;</a>​
+			</form>
+			<a href="/add-docgia">Thêm độc giả</a>
+		</div>
+	</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,117 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	
+<title>Mượn sách</title>
+</head>
+<style>
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	font-family: time new roman;
+	font-size: 20px;
+}
+
+#menu {
+	width: 560px;
+	height: 40px;
+	background: #337ab7;
+	margin: 30px auto;
+}
+
+ul.item li {
+	list-style: none;
+	float: left;
+}
+
+ul.item li a {
+	text-decoration: none;
+	color: #fff;
+	padding: 0px 15px 0px 15px;
+	line-height: 40px;
+	display: block;
+}
+
+ul.item li a:hover {
+	background: #aaa;
+}
+
+#text {
+	margin: 30px auto;
+	width: 600px;
+	height: 40px;
+}
+</style>
+<body>
+	<div id="menu">
+		<ul class="item">
+			<li><a href="/home">Trang chủ</a></li>
+			<li><a href="/docgia">Mượn sách</a></li>
+			<li><a href="">Trả sách</a></li>
+			<li><a href="">Thêm sách</a></li>
+			<li><a href="/logout">Đăng xuất</a></li>
+
+		</ul>
+
+	</div>
+	<div class="container" style="margin-top: 50px;">
+		<div class="row"
+			style="border: 1px darkgrey solid; border-radius: 10px; width: 50%; margin: 0 auto; padding: 20px;">
+			<div class="col-sm-12">
+				<h1>Hệ thống quản lý thư viện</h1>
+				<p th:text="'Nhân viên : '+${session.NAME}"></p>
+				<p th:text="'Khách hàng :'+${session.tenDG}"></p>
+				<h3>Mượn sách</h3>
+				<form action="/muonsach" method="post">
+					<div class="form-group">
+						<label>ID sách</label> <input input type="munber"
+							class="form-control" name="idS" placeholder=""> <label>Ngày
+							trả</label> <input input type="date" class="form-control" name="ngaytra">
+						<p style="color: red" th:text="${ERRO4}"></p>
+					</div>
+			</div>
+			<button type="submit" class="btn btn-primary">Thêm</button>
+			</form>
+			<form>
+				<a>‍‍‍‎​&nbsp;</a>​
+			</form>
+			<a href="/ttdocgia">Xong</a>
+			<table table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>ID Sách</th>
+					<th>Sách</th>
+					<th>Ngày Mượn</th>
+					<th>Ngày Trả</th>
+				</tr>
+			</thead>
+			<tbody>
+			<tbody style="color: black">
+				<tr th:each="mh : ${listMH}">
+					<td th:text="${mh.ids}"></td>
+					<td th:text="${mh.name}"></td>
+					<td th:text="${mh.ngaymuon}"></td>
+					<td th:text="${mh.ngaytra}"></td>
+				</tr>
+			</tbody>
+		</table>
+			
+			
+		</div>
+	</div>
+	</div>
+</body>
+</html>

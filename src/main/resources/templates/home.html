@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Trang Chủ</title>
+<style >
+	*{
+	margin: 0px;
+	padding: 0px;
+	}
+	body {
+	font-family: time new roman;
+	font-size: 20px;
+	}
+	#menu {
+	width: 560px;
+	height: 40px;
+	background: #337ab7;
+	margin: 30px auto;
+	}
+	ul.item li {
+		list-style: none;
+		float: left;
+	}
+	ul.item li a{
+	text-decoration: none;
+	color: #fff;
+	padding: 0px 15px 0px 15px;
+	line-height: 40px; 
+	display: block;
+	}
+	ul.item li a:hover{
+	
+	background: #aaa;
+	}
+	
+	#text{
+	margin: 30px auto;
+	width: 600px;
+	height: 40px;
+	}
+	
+</style>
+</head>
+<body>
+	<div id="menu">
+	<ul class="item">
+		<li><a href="/home">Trang chủ</a></li>
+		<li><a href="/docgia">Mượn sách</a></li>
+		<li><a href="">Trả sách</a></li>
+		<li><a href="">Thêm sách</a></li>
+		<li><a href="/logout">Đăng xuất</a></li>
+		
+	</ul>
+	
+	</div>
+	<div id="text">
+	<h1> Hê thống quản lý thư viện quốc gia</h1>
+	<p  th:text="'Hello: '+${session.NAME}"></p>
+	</div>
+	
+</body>
+</html>

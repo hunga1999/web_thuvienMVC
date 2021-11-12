@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hóa đơn</title>
+<style>
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	font-family: time new roman;
+	font-size: 20px;
+}
+
+#menu {
+	width: 475px;
+	height: 40px;
+	background: #337ab7;
+	margin: 30px auto;
+}
+
+
+ul.item li {
+	list-style: none;
+	float: left;
+}
+#menu2 {
+	width: 300px;
+	height: 40px;
+	background: #337ab7;
+	margin: 30px auto;
+}
+
+
+ul.item2 li {
+	list-style: none;
+	float: left;
+}
+
+ul.item li a {
+	text-decoration: none;
+	color: #fff;
+	padding: 0px 15px 0px 15px;
+	line-height: 40px;
+	display: block;
+}
+
+ul.item li a:hover {
+	background: #aaa;
+}
+
+#menu2 {
+	width: 199px;
+	height: 40px;
+	background: #337ab7;
+	margin: 30px auto;
+}
+
+
+ul.item2 li {
+	list-style: none;
+	float: left;
+}
+ul.item2 li a {
+	text-decoration: none;
+	color: #fff;
+	padding: 0px 15px 0px 15px;
+	line-height: 40px;
+	display: block;
+}
+
+#text {
+	margin: 30px auto;
+	width: 700px;
+	height: 40px;
+}
+
+.h21 {
+	left: 0;
+	right: 0;
+	width: 100%;
+	text-align: center;
+}
+
+.h11 {
+	left: 0;
+	right: 0;
+	width: 100%;
+	text-align: center;
+}
+</style>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div id="menu">
+		<ul class="item">
+			<li><a href="/home">Trang chủ</a></li>
+			<li><a href="/docgia">Mượn sách</a></li>
+			<li><a href="">Trả sách</a></li>
+			<li><a href="">Thêm sách</a></li>
+			<li><a href="/logout">Đăng xuất</a></li>
+
+		</ul>
+
+	</div>
+	<div id="text">
+		<h1 class="h11">Hệ thống quản lý thư viện quốc gia</h1>
+		<p th:text="'Hello: '+${session.NAME}"></p>
+		<p th:text="'ID Khách hàng :'+${idDG}"></p>
+		<p th:text="'Khách hàng :'+${session.tenDG}"></p>
+		<h2 class="h21">Hóa đơn dịch vụ</h2>
+		<table table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>ID Sách</th>
+					<th>Sách</th>
+					<th>Ngày Mượn</th>
+					<th>Ngày Trả</th>
+					<th>Trạng Thái</th>
+					<th>thanh toán</th>
+					<th>Gía Dịch Vụ</th>
+				</tr>
+			</thead>
+			<tbody>
+			<tbody style="color: black">
+				<tr th:each="mh : ${listMH1}">
+					<td th:text="${mh.ids}"></td>
+					<td th:text="${mh.name}"></td>
+					<td th:text="${mh.ngaymuon}"></td>
+					<td th:text="${mh.ngaytra}"></td>
+					<td th:text="${mh.trangthai}"></td>
+					<td th:text="${mh.trangthaitt}"></td>
+					<td th:text="${mh.gia}"></td>
+					
+				</tr>
+			</tbody>
+		</table>
+		<div id="menu2">
+		<ul class="item2">
+			<li><a href="/thanhtoan">Thanh toán</a></li>
+			<li><a href="/ttdocgia">Quay lại</a></li>
+
+		</ul>
+
+	</div>
+
+</body>
+</html>
